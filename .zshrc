@@ -82,6 +82,9 @@ plugins=(
 	zsh-autosuggestions
 )
 
+autoload -Uz compinit
+compinit
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -173,6 +176,10 @@ function gpa() {
   git pull --autostash "$@"
 }
 
+# === FZF Setup (Assuming fzf is installed) ===
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+source "$HOME/.fzf/shell/key-bindings.zsh"
+
 # === History Search & Key Bindings (zsh equivalent of PSReadLine + PSFzf) ===
 bindkey -v  # Vi mode
 autoload -U up-line-or-beginning-search down-line-or-beginning-search
@@ -183,9 +190,6 @@ bindkey '^F' fzf-file-widget  # Requires fzf and fzf.zsh to be sourced
 
 # === Zoxide (cd alternative) ===
 eval "$(zoxide init zsh)"
-
-# === FZF Setup (Assuming fzf is installed) ===
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 # === Chocolatey Tab Completion (Windows only; skipped if not applicable) ===
