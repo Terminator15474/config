@@ -1,0 +1,6 @@
+*
+!.zshrc
+!.gitignore
+!.config/
+!.config/wezterm/
+!.config/wezterm/wezterm.lua
