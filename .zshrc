@@ -2,10 +2,16 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
+function set_env_vars_cygwin() {
+	export HOME="/cygdrive/c/Users/jando"
+	# export APPDATA="$HOME/AppData/Roaming"
+}
+
 case "$(uname -s)" in
-	CYGWIN*)	export HOME="/cygdrive/c/Users/jando";;
-	*)	export HOME="/home/jan";;
+	CYGWIN*) set_env_vars_cygwin ;;
+	*) export HOME="/home/jan";;
 esac
+
 
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"

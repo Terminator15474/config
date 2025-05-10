@@ -4,3 +4,4 @@
 !.config/
 !.config/wezterm/
 !.config/wezterm/wezterm.lua
+!.config/nvim/
