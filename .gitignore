@@ -1,7 +1,16 @@
-*
-!.zshrc
-!.gitignore
-!.config/
-!.config/wezterm/
-!.config/wezterm/wezterm.lua
-!.config/nvim/
+# ignore everything by default
+/*
+
+# Allow .zshrc and .gitignore
+!/.zshrc
+!/.gitignore
+
+# Allow /.config
+!/.config/
+
+# Ignore everything in /.config
+/.config/*
+
+# Allow the specific configs
+!/.config/wezterm/
+!/.config/nvim/
