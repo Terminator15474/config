@@ -7,7 +7,6 @@ config.default_prog = { 'zsh' }
 config.window_background_opacity = 0.2
 
 
-
 config.keys = {
 	{
 		key = 'Space',
@@ -15,5 +14,13 @@ config.keys = {
 		action = wezterm.action.SendKey { key = 'Space', mods = 'CTRL' },
 	}
 }
+
+-- OS specific configuration
+print(wezterm.target_triple)
+if wezterm.target_triple:find('linux') then
+	require('linux').setup(config)
+else
+	require('windows').setup(config)
+end
 
 return config
