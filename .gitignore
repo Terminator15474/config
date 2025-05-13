@@ -14,3 +14,4 @@
 # Allow the specific configs
 !/.config/wezterm/
 !/.config/nvim/
+!/.config/install/
