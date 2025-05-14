@@ -19,10 +19,11 @@ config.keys = {
 }
 
 -- OS specific configuration
-print(wezterm.target_triple)
 if wezterm.target_triple:find('linux') then
+	print("Running Linux config")
 	require('linux').setup(config)
 else
+	print("Running Windows config")
 	require('windows').setup(config)
 end
 

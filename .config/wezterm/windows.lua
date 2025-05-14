@@ -2,7 +2,7 @@ local M = {}
 
 ---@param config Config
 M.setup = function(config)
-	print("Running windows specific setup")
+	config.window_background_opacity = 0
 end
 
 return M
