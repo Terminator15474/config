@@ -3,12 +3,13 @@ local M = {}
 ---@param config Config
 M.setup = function(config)
 	config.unix_domains = {
+		---@diagnostic disable-next-line
 		{
 			name = "unix",
-			-- socket_path = "/some/path",
 			no_serve_automatically = false,
 			connect_automatically = true,
 		},
+		---@diagnostic disable-next-line
 		{
 			name = "wsl",
 			serve_command = { "wsl", "wezterm-mux-server", "--daemonize" },
