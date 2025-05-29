@@ -15,7 +15,7 @@ M.setup = function(config)
 			serve_command = { "wsl", "wezterm-mux-server", "--daemonize" },
 		}
 	}
-	config.default_gui_startup_args = { "connect", "unix" }
+	-- config.default_gui_startup_args = { "connect", "unix" }
 end
 
 return M

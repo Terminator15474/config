@@ -4,6 +4,7 @@
 # Allow .zshrc and .gitignore
 !/.zshrc
 !/.gitignore
+!/.p10k.zsh
 
 # Allow /.config
 !/.config/
