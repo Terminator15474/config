@@ -1,0 +1,23 @@
+[safe]
+	directory = C:/Users/jando/Programieren/space_invaders_webgpu
+	directory = C:/Users/jando/Programieren/firefox_translate_extension
+	directory = C:/Users/jando/Programieren/zig_png
+	directory = C:/Users/jando/Programieren/Knie-OP_ArUco_Tracking
+	directory = C:/Users/jando/Programieren/Knie-OP_ArUco_Tracking
+	directory = C:/Users/jando/Programieren/SmartDeviceTracking
+	directory = C:/Users/jando/Programieren/SmartDeviceTracking
+	directory = C:/Program Files/PowerShell/7
+	directory = C:/Users/jando/AppData/Local/nvim-data/lazy
+	directory = C:Users/jando
+	directory = C:Users/jando/AppData/Local/nvim
+	directory = *
+[user]
+	email = jandommert8@gmail.com
+	name = Terminator15474
+[cinnabar]
+	version-check = 1736075546
+[core]
+	autocrlf = input
+
+[alias]
+	cc = shortlog --count -s
