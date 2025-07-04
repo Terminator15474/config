@@ -6,6 +6,8 @@
 !/.gitignore
 !/.gitconfig
 !/.p10k.zsh
+!/.gitmodules
+!/.profile
 
 # Allow /.config
 !/.config/
@@ -17,3 +19,8 @@
 !/.config/wezterm/
 !/.config/nvim/
 !/.config/install/
+!/.config/ghostty/
+!/.config/hypr/
+!/.config/rofi/
+!/.config/waybar/
+!/.config/yay/
