@@ -224,3 +224,4 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval `ssh-agent -s`
+ssh-add ~/.ssh/github_rsa
