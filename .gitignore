@@ -11,6 +11,8 @@
 
 # Allow /.config
 !/.config/
+!/.oh-my-zsh/
+!/.fzf/
 
 # Ignore everything in /.config
 /.config/*
