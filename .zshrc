@@ -140,7 +140,7 @@ source "$HOME/.oh-my-zsh/oh-my-zsh.sh"
 # === Remove built-in aliases or override ===
 unalias cd 2>/dev/null
 unalias curl 2>/dev/null
-unalias gc gcb gcm gcs gl gm gpv gs ga gp gd sl nv 2>/dev/null
+unalias gc gcb gcm gcs gl gm gpv gs ga gp gd sl nv gca 2>/dev/null
 
 # === Aliases ===
 alias vim="nvim"

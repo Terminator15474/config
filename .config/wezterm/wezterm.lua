@@ -36,6 +36,12 @@ config.keys = {
 		mods = 'CTRL',
 		action = wezterm.action.SendKey { key = 'Z', mods = 'CTRL' }
 	},
+
+	{
+		key = 'Backspace',
+		mods = 'CTRL',
+		action = wezterm.action.SendKey { key = 'Backspace', mods = 'CTRL' }
+	},
 }
 
 -- OS specific configuration
