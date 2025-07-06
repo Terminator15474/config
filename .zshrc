@@ -223,5 +223,5 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval `ssh-agent -s`
-ssh-add ~/.ssh/github_rsa
+eval `ssh-agent -s` > /dev/null 2&>1
+ssh-add ~/.ssh/github_rsa > /dev/null 2&>1
