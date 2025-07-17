@@ -46,7 +46,8 @@
 
     "custom/wifi",          // wi-fi
     "bluetooth",            // bluetooth
-    "custom/update",        // system update
+	// causes problems with AUR (429)
+    // "custom/update",        // system update
     "custom/right5"
   ],
 
