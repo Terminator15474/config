@@ -6,7 +6,7 @@ config.automatically_reload_config = true
 config.color_scheme = "Tokyo Night Moon"
 
 ---@diagnostic disable-next-line
-config.font = wezterm.font('GeistMono Nerd Font', { weight = 'Regular' })
+config.font = wezterm.font('GeistMono', { weight = 'Regular' })
 
 config.default_prog = { 'zsh' }
 
