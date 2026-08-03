@@ -11,7 +11,7 @@ fi
 # Path to your Oh My Zsh installation.
 function set_env_vars_cygwin() {
 	export HOME="/cygdrive/c/Users/jando"
-	# export APPDATA="$HOME/AppData/Roaming"
+	export XDG_CONFIG_HOME=$(cygpath -w "$HOME/.config/")
 }
 
 case "$(uname -s)" in
@@ -25,7 +25,6 @@ export ZSH_CUSTOM="$ZSH/custom"
 
 
 export XDG_DATA_DIR="$HOME/.local/share"
-export XDG_CONFIG_HOME=$(cygpath -w "$HOME/.config/")
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
