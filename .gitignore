@@ -17,6 +17,9 @@
 !/.fzf/
 !/.fzf/*
 
+# Disallow cache
+/.oh-my-zsh/cache/**
+
 # Ignore everything in /.config
 /.config/*
 

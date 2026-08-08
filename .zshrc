@@ -26,11 +26,24 @@ export ZSH_CUSTOM="$ZSH/custom"
 
 export XDG_DATA_DIR="$HOME/.local/share"
 
+export PATH="$HOME/go/bin:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# General purpose env variables
+
+# ComfyUI Optimization
+export HIP_PLATFORM=amd
+export PYTORCH_HIP_FALLBACK=1
+export PYTORCH_HIP_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:0.9,max_split_size_mb:512
+export TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1
+export PYTORCH_TUNABLEOP_ENABLED=1
+export MIOPEN_FIND_MODE=FAST
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -168,7 +181,11 @@ function gs() {
 }
 
 function ga() {
-  git add .
+  if [[ $# -eq 0 ]]; then
+    git add .
+  else
+    git add $@
+  fi
 }
 
 function gd() {
