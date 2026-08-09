@@ -9,6 +9,7 @@
 !/.gitmodules
 !/.profile
 !/.tmux.conf
+!/packages.txt
 
 # Allow /.config
 !/.config/
@@ -29,6 +30,7 @@
 !/.config/install/
 !/.config/ghostty/
 !/.config/hypr/
+!/.config/quickshell/
 !/.config/rofi/
 !/.config/waybar/
 !/.config/yay/

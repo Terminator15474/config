@@ -4,7 +4,7 @@ config.automatically_reload_config = true
 
 config.color_scheme = "Tokyo Night Moon"
 
-config.default_prog = { 'zsh' }
+config.default_prog = { 'tmux' }
 
 config.window_background_opacity = 0.8
 
