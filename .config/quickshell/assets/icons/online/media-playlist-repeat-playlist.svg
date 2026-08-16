@@ -26,8 +26,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.0580085"
-     inkscape:cx="187.14405"
-     inkscape:cy="627.12162"
+     inkscape:cx="458.40842"
+     inkscape:cy="484.40065"
      inkscape:window-width="2560"
      inkscape:window-height="1408"
      inkscape:window-x="0"
@@ -37,43 +37,43 @@
      showguides="false"
      showgrid="false" />
   <path
-     d="M 20.42,5.15991 H 6.57996 c -1.66,0 -3,1.34 -3,3 v 3.31999"
+     d="M 20.193159,4.7062274 H 6.3531187 c -1.66,0 -3,1.34 -3,3 v 3.3199896"
      stroke="#292d32"
      stroke-width="2"
      stroke-miterlimit="10"
      stroke-linecap="round"
      stroke-linejoin="round"
      id="path1"
-     style="stroke-dasharray:none;stroke-width:3" />
+     style="stroke-width:3;stroke-dasharray:none" />
   <path
-     d="m 17.26,2 3.16,3.15997 -3.16,3.16004"
+     d="m 17.033159,1.5463174 3.16,3.15997 -3.16,3.16004"
      stroke="#292d32"
      stroke-width="2"
      stroke-miterlimit="10"
      stroke-linecap="round"
      stroke-linejoin="round"
      id="path2"
-     style="stroke-dasharray:none;stroke-width:3" />
+     style="stroke-width:3;stroke-dasharray:none" />
   <path
-     d="M 3.57996,18.84 H 17.42 c 1.66,0 3,-1.34 3,-3 v -3.32"
+     d="M 3.3531187,18.386317 H 17.193159 c 1.66,0 3,-1.34 3,-3 v -3.32"
      stroke="#292d32"
      stroke-width="2"
      stroke-miterlimit="10"
      stroke-linecap="round"
      stroke-linejoin="round"
      id="path3"
-     style="stroke-dasharray:none;stroke-width:3" />
+     style="stroke-width:3;stroke-dasharray:none" />
   <path
-     d="m 6.73996,21.9999 -3.16,-3.1599 3.16,-3.1601"
+     d="m 6.5131187,21.546217 -3.16,-3.1599 3.16,-3.1601"
      stroke="#292d32"
      stroke-width="2"
      stroke-miterlimit="10"
      stroke-linecap="round"
      stroke-linejoin="round"
      id="path4"
-     style="stroke-dasharray:none;stroke-width:3" />
+     style="stroke-width:3;stroke-dasharray:none" />
   <path
      id="path6"
-     style="fill:#000000;stroke-width:0.444763;stroke-dasharray:none"
-     d="M 13.40358,22.454643 A 1.4035805,1.5453562 0 0 1 12,24 1.4035805,1.5453562 0 0 1 10.59642,22.454643 1.4035805,1.5453562 0 0 1 12,20.909287 a 1.4035805,1.5453562 0 0 1 1.40358,1.545356 z" />
+     style="fill:#000000;stroke-width:0.582034;stroke-dasharray:none"
+     d="M 13.98486,22.128558 A 1.9848616,1.8714405 0 0 1 12,24 1.9848616,1.8714405 0 0 1 10.015139,22.128558 1.9848616,1.8714405 0 0 1 12,20.257117 a 1.9848616,1.8714405 0 0 1 1.98486,1.871441 z" />
 </svg>
