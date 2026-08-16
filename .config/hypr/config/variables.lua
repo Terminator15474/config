@@ -10,12 +10,15 @@ local R = {
 	auth_agent = "hyprpolkitagent.service",
 
 	-- wallpapers
-	left_wallpaper = os.getenv("HOME") .. "/Pictures/wallpapers/static/chessboard.png.png",
-	right_wallpaper = os.getenv("HOME") .. "/Pictures/wallpapers/static/sunrise-above-mountains.png.png",
+	awww_wait =
+	'while ! awww query &>/dev/null; do sleep 0.1; echo "wait" > ~/tmp.log; done; ',
+	left_wallpaper = "~/Pictures/wallpapers/Anime/dragons_fighting.png.png",
+	right_wallpaper = "~/Pictures/wallpapers/Anime/anime_girl_assault_rifle.png",
 
 	-- monitors
 	right_monitor = "DP-1",
 	left_monitor = "DP-3",
+	screen_lock = "~/.local/share/quickshell-lockscreen/lock.sh"
 }
 
 

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 24 24"
+   fill="none"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="media-playlist-repeat-track.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4">
+    <rect
+       x="380.95238"
+       y="245.9482"
+       width="206.51629"
+       height="227.23475"
+       id="rect3" />
+    <rect
+       x="322.13868"
+       y="344.86216"
+       width="164.41102"
+       height="137.67752"
+       id="rect1" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.748125"
+     inkscape:cx="263.32498"
+     inkscape:cy="820.05013"
+     inkscape:window-width="2560"
+     inkscape:window-height="1408"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4"
+     showgrid="false" />
+  <path
+     d="M 20.42,5.15991 H 6.57996 c -1.66,0 -3,1.34 -3,3 v 3.31999"
+     stroke="#292d32"
+     stroke-width="2"
+     stroke-miterlimit="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path1"
+     style="stroke-width:3;stroke-dasharray:none" />
+  <path
+     d="m 17.26,2 3.16,3.15997 -3.16,3.16004"
+     stroke="#292d32"
+     stroke-width="2"
+     stroke-miterlimit="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path2"
+     style="stroke-width:3;stroke-dasharray:none" />
+  <path
+     d="M 3.57996,18.84 H 17.42 c 1.66,0 3,-1.34 3,-3 v -3.32"
+     stroke="#292d32"
+     stroke-width="2"
+     stroke-miterlimit="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path3"
+     style="stroke-width:3;stroke-dasharray:none" />
+  <path
+     d="m 6.73996,21.9999 -3.16,-3.1599 3.16,-3.1601"
+     stroke="#292d32"
+     stroke-width="2"
+     stroke-miterlimit="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path4"
+     style="stroke-width:3;stroke-dasharray:none" />
+  <text
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.4px;font-family:'Adwaita Sans';-inkscape-font-specification:'Adwaita Sans, @opsz=32,wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'opsz' 32, 'wght' 700;fill:#000000;stroke-width:0.03"
+     transform="scale(1.2302414,0.8128486)"
+     x="6.421505"
+     y="20.001179"
+     id="text2">1</text>
+</svg>

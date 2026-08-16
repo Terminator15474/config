@@ -8,16 +8,6 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your Oh My Zsh installation.
-function set_env_vars_cygwin() {
-	export HOME="/cygdrive/c/Users/jando"
-	export XDG_CONFIG_HOME=$(cygpath -w "$HOME/.config/")
-}
-
-case "$(uname -s)" in
-	CYGWIN*) set_env_vars_cygwin ;;
-	*) export HOME="/home/jan";;
-esac
 
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -25,6 +15,7 @@ export ZSH_CUSTOM="$ZSH/custom"
 
 
 export XDG_DATA_DIR="$HOME/.local/share"
+export XDG_CONFIG_DIR="$HOME/.config"
 
 export PATH="$HOME/go/bin:$PATH"
 
@@ -245,3 +236,8 @@ fi
 
 eval `ssh-agent -s` > /dev/null 2&>1
 ssh-add ~/.ssh/github_rsa > /dev/null 2&>1
+
+# Created by `pipx` on 2026-08-13 17:09:02
+export PATH="$PATH:/home/odin/.local/bin"
+
+# cat ~/.cache/iris/sequences
