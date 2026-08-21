@@ -2,12 +2,13 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
 import Quickshell
+import qs.components.colors
 
 Item {
 	id: root
 
 	required property string icon
-	property color color: Qt.rgba(1, 1, 1, 1)
+	property color color: Colors.palette.fg
 
 	property real size: 24
 

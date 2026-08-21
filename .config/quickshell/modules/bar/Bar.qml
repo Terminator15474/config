@@ -1,7 +1,9 @@
 import "components"
+import "components/time"
 
 import qs.components.divider
 import qs.components.colors
+import qs.components.config
 
 import Quickshell
 import Quickshell.Io
@@ -11,10 +13,9 @@ import QtQuick.Layouts
 
 Scope {
 	id: root
-	property string time
 
 	Variants {
-		model: [Quickshell.screens[0]]
+		model: Quickshell.screens.filter(s => Config.config.bar.screens.includes(s.name))
 
 		PanelWindow {
 			id: barPanelWindow
@@ -46,21 +47,17 @@ Scope {
 				anchors.centerIn: parent
 				spacing: 8
 
-				Clock {}
+				Time {}
 			}
 
 			RowLayout {
 				anchors.right: parent.right
 				anchors.verticalCenter: parent.verticalCenter
 				anchors.rightMargin: 14
-				spacing: 8
+				spacing: 14
 
 				MediaPlayer {
 					barRoot: barPanelWindow
-				}
-
-				Divider {
-					dividerColor: Colors.palette.fg
 				}
 
 				Network {}
@@ -74,13 +71,15 @@ Scope {
 					enabled: UPower.displayDevice.isLaptopBattery
 				}
 
+				PowerMenu {}
+
 				// Text {
 				// 	text: "vol " + Math.round((Pipewire.defaultAudioSink?.audio?.volume ?? 0) * 100) + "%"
 				// 	color: "#9ece6a"
 				// }
 				//
 				// PwObjectTracker { objects: [Pipewire.defaultAudioSink] }
-				//
+
 			}
 		}
 	}

@@ -1,0 +1,13 @@
+{
+	"screens": {
+		"main": "DP-1"
+	},
+	"bar": {
+		"screens": [
+			"DP-1"
+		]
+	},
+	"launcher": {
+		"onOtherScreens": false
+	}
+}

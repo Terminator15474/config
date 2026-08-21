@@ -5,14 +5,30 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import "modules/bar"
+import "modules/background"
+import "modules/launcher"
+import qs.components.states
+import qs.components
 
 ShellRoot {
 	id: root
 
-	FontLoader {
-		id: nerdFonts
-		source: "./assets/fonts/symbols-2048-em.ttf"
+	Binding {
+		target: ShellState
+		property: "shellRoot"
+		value: root
 	}
 
+	FontLoader {
+		id: nerdFonts
+		source: "./assets/fonts/GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf"
+	}
+
+	Shortcuts {}
+
+	Background {}
+
 	Bar {}
+
+	Launcher {}
 }

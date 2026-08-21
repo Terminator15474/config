@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 
-SvgIcon {
+Icon {
 	id: root
 
 	required property string iconName

@@ -10,8 +10,6 @@ local R = {
 	auth_agent = "hyprpolkitagent.service",
 
 	-- wallpapers
-	awww_wait =
-	'while ! awww query &>/dev/null; do sleep 0.1; echo "wait" > ~/tmp.log; done; ',
 	left_wallpaper = "~/Pictures/wallpapers/Anime/dragons_fighting.png.png",
 	right_wallpaper = "~/Pictures/wallpapers/Anime/anime_girl_assault_rifle.png",
 

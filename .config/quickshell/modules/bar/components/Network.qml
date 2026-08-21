@@ -7,6 +7,7 @@ import Quickshell.Widgets
 import Quickshell.Networking
 
 import qs.components.icons
+import qs.components.colors
 
 Item {
 	id: root
@@ -21,10 +22,15 @@ Item {
 		spacing: 8
 
 		// No Connection
-		SvgIcon {
+		Icon {
 			visible: !isConnected
 			icon: "online/network-disconnected-monitor-x"
 			size: 36
+		}
+		Text {
+			visible: !isConnected
+			text: "Not Connected"
+			color: Colors.palette.fg
 		}
 
 		// Show icons for all connections

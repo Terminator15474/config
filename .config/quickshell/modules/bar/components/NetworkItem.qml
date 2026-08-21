@@ -38,7 +38,7 @@ Item {
 		spacing: -4
 
 		// Wired
-		SvgIcon {
+		Icon {
 			visible: isWired
 			icon: "online/network-connected-monitor"
 			color: Colors.palette.fg
@@ -46,7 +46,7 @@ Item {
 		}
 
 		// wireless
-		MaterialSvgIcon {
+		MaterialIcon {
 			visible: isWifi
 			iconName: {
 				if (!device.connected) {
@@ -131,7 +131,7 @@ Item {
 
 							Layout.alignment: Qt.AlignVCenter
 
-							MaterialSvgIcon {
+							MaterialIcon {
 								iconName: iconBase + ((needsPassword && hasIconAddons) ? "_lock" : "")
 								color: Colors.palette.fg
 							}

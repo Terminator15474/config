@@ -6,6 +6,7 @@ import Quickshell.Services.Mpris
 
 import qs.components.colors
 import qs.components.icons
+import qs.components.states
 
 Item {
 	id: root
@@ -35,11 +36,27 @@ Item {
 		}
 	}
 
+	MouseArea {
+		anchors.fill: parent
+		onClicked: {
+			ShellState.forMainScreen().mediaPlayer = !ShellState.forMainScreen().mediaPlayer
+		}
+	}
+
+	TapHandler {
+		id: tapHandler
+
+		gesturePolicy: TapHandler.WithinBounds
+		onTapped: {
+			ShellState.forMainScreen().mediaPlayer = !ShellState.forMainScreen().mediaPlayer
+		}
+	}
+
 	HoverHandler {
 		id: hoverHandler
 		onHoveredChanged: () => {
-			activePlayer.positionChanged() // Update position
-			if(!hoverHandler.hovered && !popupHover.hovered) {
+			activePlayer?.positionChanged() // Update position
+			if(!hoverHandler.hovered && !popupHover.hovered && !ShellState.forMainScreen().mediaPlayer) {
 				hideTimer.start()
 			}
 		}
@@ -51,6 +68,7 @@ Item {
 		repeat: false
 		running: false
 	}
+
 	PopupWindow {
 		id: popup
 
@@ -62,7 +80,7 @@ Item {
 		implicitWidth: popupLayout.implicitWidth + 24
 		implicitHeight: popupLayout.implicitHeight + 24
 
-		visible: hoverHandler.hovered || popupHover.hovered || hideTimer.running
+		visible: ShellState.forMainScreen().mediaPlayer || hoverHandler.hovered || popupHover.hovered || hideTimer.running
 
 		color: "#00ffffff"
 
@@ -91,7 +109,7 @@ Item {
 					text: root.activePlayer?.trackTitle ?? "No Track"
 					font.pointSize: 10
 					color: Colors.palette.fg
-					Layout.alignment: Qt.AlignVCenter
+					Layout.alignment: Qt.AlignHCenter
 				}
 
 				Text {
@@ -104,76 +122,79 @@ Item {
 				RowLayout {
 					id: controls
 
-					visible: activePlayer.canControl
+					visible: activePlayer?.canControl ?? false
 
 					Layout.alignment: Qt.AlignHCenter
 
 					// Shuffle
-					ClickableSvgIcon {
+					ClickableIcon {
 						id: shuffleIcon
 
-						visible: activePlayer.shuffleSupported
+						visible: activePlayer?.shuffleSupported ?? false
 
-						icon: activePlayer.shuffle ? "online/media-playlist-shuffle-enabled" : "online/media-playlist-shuffle"
+						icon: activePlayer?.shuffle ? "online/media-playlist-shuffle-enabled" : "online/media-playlist-shuffle"
 						color: Colors.palette.fg
 
-						onClicked: () => activePlayer.shuffle = !activePlayer.shuffle
+						onClicked: {
+							if (activePlayer) activePlayer.shuffle = !activePlayer.shuffle
+						}
 					}
 
-					ClickableSvgIcon {
+					ClickableIcon {
 						id: prevIcon
 
-						visible: activePlayer.canGoPrevious
+						visible: activePlayer?.canGoPrevious ?? false
 
 						icon: "papirus/media-skip-backward-symbolic"
 						color: Colors.palette.fg
 						size: 16
 
-						onClicked: activePlayer.previous()
+						onClicked: activePlayer?.previous()
 					}
 
-					ClickableSvgIcon {
+					ClickableIcon {
 						id: playPauseIcon
 
-						visible: activePlayer.canTogglePlaying
+						visible: activePlayer?.canTogglePlaying ?? false
 
-						icon: activePlayer.isPlaying ? "online/media-playback-pause" : "online/media-playback-start"
+						icon: activePlayer?.isPlaying ? "online/media-playback-pause" : "online/media-playback-start"
 						color: Colors.palette.fg
 						size: 16
 
-						onClicked: activePlayer.togglePlaying()
+						onClicked: activePlayer?.togglePlaying()
 					}
 
-					ClickableSvgIcon {
+					ClickableIcon {
 						id: nextIcon
 
-						visible: activePlayer.canGoNext
+						visible: activePlayer?.canGoNext ?? false
 
 						icon: "papirus/media-skip-forward-symbolic"
 						color: Colors.palette.fg
 						size: 16
 
-						onClicked: activePlayer.next()
+						onClicked: activePlayer?.next()
 					}
 
-					ClickableSvgIcon {
+					ClickableIcon {
 						id: loopIcon
 
-						visible: activePlayer.loopSupported
+						visible: activePlayer?.loopSupported ?? false
 
 						icon: {
-							if (activePlayer.loopState === MprisLoopState.None) return "online/media-playlist-repeat";
-							if (activePlayer.loopState === MprisLoopState.Playlist) return "online/media-playlist-repeat-playlist";
-							if (activePlayer.loopState === MprisLoopState.Track) return "online/media-playlist-repeat-track";
+							if (activePlayer?.loopState === MprisLoopState.None) return "online/media-playlist-repeat";
+							if (activePlayer?.loopState === MprisLoopState.Playlist) return "online/media-playlist-repeat-playlist";
+							if (activePlayer?.loopState === MprisLoopState.Track) return "online/media-playlist-repeat-track";
+							return "papirus/error"
 						}
 
 						color: Colors.palette.fg
 						size: 16
 
 						onClicked: () => {
-							if (activePlayer.loopState === MprisLoopState.None) { activePlayer.loopState = MprisLoopState.Playlist}
-							else if (activePlayer.loopState === MprisLoopState.Playlist) { activePlayer.loopState = MprisLoopState.Track}
-							else if (activePlayer.loopState === MprisLoopState.Track) { activePlayer.loopState = MprisLoopState.None}
+							if (activePlayer?.loopState === MprisLoopState.None) { activePlayer.loopState = MprisLoopState.Playlist}
+							else if (activePlayer?.loopState === MprisLoopState.Playlist) { activePlayer.loopState = MprisLoopState.Track}
+							else if (activePlayer?.loopState === MprisLoopState.Track) { activePlayer.loopState = MprisLoopState.None}
 						}
 					}
 				}
@@ -205,20 +226,20 @@ Item {
 
 					Text {
 						id: trackTimeLeft
-						visible: activePlayer.positionSupported
+						visible: activePlayer?.positionSupported ?? false
 
-						text: seekBarLayout.displayTime(activePlayer.position)
+						text: seekBarLayout.displayTime(activePlayer?.position ?? 0)
 						color: Colors.palette.fg
 					}
 
 					Slider {
 						id: seekBar
 
-						visible: activePlayer.positionSupported && activePlayer.lengthSupported
+						visible: (activePlayer?.positionSupported && activePlayer?.lengthSupported) ?? false
 
 						from: 0
-						to: (activePlayer.length > 0) ? activePlayer.length : 1
-						value: seekBar.pressed ? value : activePlayer.position
+						to: (activePlayer?.length > 0) ? (activePlayer?.length ?? 0) : 1
+						value: seekBar.pressed ? value : (activePlayer?.position ?? 0)
 
 						background: Rectangle {
 							x: seekBar.leftPadding
@@ -262,9 +283,9 @@ Item {
 
 					Text {
 						id: trackTime
-						visible: activePlayer.lengthSupported
+						visible: activePlayer?.lengthSupported ?? false
 
-						text: seekBarLayout.displayTime(activePlayer.length)
+						text: seekBarLayout.displayTime(activePlayer?.length ?? 0)
 						color: Colors.palette.fg
 					}
 				}
@@ -275,7 +296,7 @@ Item {
 					Layout.alignment: Qt.AlignHCenter
 
 					// Left
-					ClickableSvgIcon {
+					ClickableIcon {
 						icon: "online/go-previous"
 
 						visible: Mpris.players.values.length > 1
@@ -283,17 +304,17 @@ Item {
 						onClicked: {
 							let activeIndex = Mpris.players.values.indexOf(activePlayer)
 
-							if(activePlayer.canPause) {
+							if(activePlayer?.canPause) {
 								activePlayer.pause()
-							} else if (activePlayer.canStop) {
+							} else if (activePlayer?.canStop) {
 								activePlayer.stop()
 							}
 
 							activePlayer = Mpris.players.values[(activeIndex-1) % Mpris.players.values.length]
 
-							if(activePlayer.canPlay) {
+							if(activePlayer?.canPlay) {
 								activePlayer.play()
-							} else if (activePlayer.canRaise) {
+							} else if (activePlayer?.canRaise) {
 								activePlayer.raise() // If we can't play, bring it forward for the user to start playing
 							}
 						}
@@ -303,23 +324,23 @@ Item {
 						model: Mpris.players
 
 						Text {
-							visible: modelData.identity === activePlayer.identity
+							visible: modelData?.identity === activePlayer.identity
 
 							text: modelData.identity
 							color: Colors.palette.fg
 						}
 					}
 
-					ClickableSvgIcon {
+					ClickableIcon {
 						icon: "online/go-next"
 
 						visible: Mpris.players.values.length > 1
 
 						onClicked: {
 							let activeIndex = Mpris.players.values.indexOf(activePlayer)
-							activePlayer.canPause ? activePlayer.pause() : activePlayer.stop()
+							activePlayer?.canPause ? activePlayer.pause() : activePlayer.stop()
 							activePlayer = Mpris.players.values[(activeIndex+1) % Mpris.players.values.length]
-							activePlayer.canPlay ? activePlayer.play() : null
+							activePlayer?.canPlay ? activePlayer.play() : null
 						}
 					}
 				}
@@ -333,6 +354,6 @@ Item {
 		running: hoverHandler.hovered || popupHover.hovered || hideTimer.running
 		interval: 1000
 		repeat: true
-		onTriggered: activePlayer.positionChanged()
+		onTriggered: activePlayer?.positionChanged()
 	}
 }

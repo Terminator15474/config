@@ -62,7 +62,7 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true, descr
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(vars.terminal), { description = "Open Terminal" })
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(vars.file_manager), { description = "Open File Manager" })
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(vars.menu), { description = "Open Run Menu" })
+hl.bind(mainMod .. " + Space", hl.dsp.global("quickshell:launcher"), { description = "Open Run Menu" })
 
 -- Screenshots
 hl.bind(

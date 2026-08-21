@@ -5,16 +5,7 @@ local vars = require("config.variables")
 
 
 hl.on("hyprland.start", function()
-	-- start awww-daemon
-	hl.exec_cmd("awww-daemon --no-cache")
-
 	hl.exec_cmd("systemctl --user enable --now " .. vars.notification_daemon)
-
-
-	-- set wallpapers using awww
-	hl.exec_cmd(vars.awww_wait .. 'awww img -o ' .. vars.left_monitor .. ' ' .. vars.left_wallpaper)
-	hl.exec_cmd(vars.awww_wait .. 'awww img -o ' .. vars.right_monitor .. ' ' .. vars.right_wallpaper)
-
 
 	hl.exec_cmd("quickshell")
 
@@ -30,6 +21,5 @@ hl.on("hyprland.start", function()
 	-- Everything setup -> Lock the screen
 	hl.exec_cmd(vars.screen_lock)
 
-	-- hl.exec_cmd("nm-applet")
-	-- hl.exec_cmd("waybar & hyprpaper & firefox")
+	-- hl.exec_cmd("nm-applet")  Hopefully not need this, quickshell network menu should handle this
 end)

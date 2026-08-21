@@ -43,14 +43,15 @@ hl.window_rule({
 	workspace = "3"
 })
 
+local ws_4_windows = {
+	".*feh.*",
+	".*steam.*",
+	".*office.*"
+}
 
-hl.window_rule({
-	match = { class = ".*feh.*" },
-	workspace = "4"
-})
-
-
-hl.window_rule({
-	match = { class = ".*steam.*" },
-	workspace = "4"
-})
+for _, value in ipairs(ws_4_windows) do
+	hl.window_rule({
+		match = { class = value },
+		workspace = "4"
+	})
+end
